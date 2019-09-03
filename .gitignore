@@ -1,0 +1,22 @@
+venv
+w-venv
+*.pyc
+*.json
+*.csv
+*.png
+*.zip
+.ipynb_checkpoints
+*._*
+__pycache__
+*.pyc
+.vscode
+.coverage
+*.log
+
+# Configuration
+.env
+
+# Data directories
+data
+redis-data
+certs

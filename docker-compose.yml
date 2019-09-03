@@ -1,0 +1,18 @@
+version: '3'
+services:
+    web:
+        container_name: secure_sharing
+        build: .
+        ports:
+            - 80:80
+            - 443:443
+        restart: always
+        depends_on:
+            - redis
+    redis:
+        image: redis
+        restart: always
+        volumes:
+            - ./redis-data:/data
+        ports:
+            - 6379:6379
