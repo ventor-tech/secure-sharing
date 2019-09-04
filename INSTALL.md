@@ -8,20 +8,19 @@ Installation of SecureSharing is pretty simple.
 file to `.env` and change parameters if needed. One required parameter
 to change is `SECRET_KEY`.
 
-2. Build and run Docker containers:
+2. Build and run Docker containers.
 
 **NOTE** Check [this link](https://linuxize.com/post/how-to-install-and-use-docker-on-debian-9/)
 to find out how to install Docker on Debian 9.
 
-**NOTE** Check [this link](https://linuxize.com/post/how-to-install-and-use-docker-compose-on-debian-9/) to find out how to install docker-compose on Debian 9.
+**NOTE** Check [this link](https://linuxize.com/post/how-to-install-and-use-docker-compose-on-debian-9/)
+to find out how to install docker-compose on Debian 9.
 
 ```bash
 docker-compose build && docker-compose up -d
 ```
 
 3. Configure Nginx proxy.
-
-**NOTE** You're free to use any web server you like.
 
 ```bash
 apt install nginx
@@ -49,22 +48,23 @@ rm /etc/nginx/sites-enabled/default
 ln -s /etc/nginx/sites-available/secure.conf /etc/nginx/sites-enabled/
 ```
 
-1. Generate SSL certificates.
-
-We recommend to use LetsEncrypt to generate valid SSL certificates.
+4. Generate SSL certificates. We recommend to use LetsEncrypt to generate
+valid SSL certificates.
 
 Check [this document](https://certbot.eff.org/lets-encrypt/debianstretch-nginx)
 to find out how to install Certbot for Nginx on Debian 9.
 
-Run the following command to automatically generate certificates for `<your_domain_name>`
-specified in Nginx configuration:
+After installation run the following command to automatically generate
+certificates for `<your_domain_name>` specified in Nginx configuration:
 
 ```bash
 certbot --nginx
 ```
 
 Certbot will update Nginx configuration to redirect from HTTP to HTTPS automatically.
-Also it will create cron job to renew certificates automatically before they expired.
+It will also create cron job to renew certificates automatically before they expired.
+
+5. Now you should be able to open `https://<your_domain_name>` in browser.
 
 ## Development 
 
