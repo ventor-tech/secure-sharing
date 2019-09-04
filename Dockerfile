@@ -1,30 +1,27 @@
-FROM debian:buster-slim
+FROM python:3.7
 
 LABEL maintainer "Alexander Pashuk <alexander.pashuk@xpansa.com>"
-LABEL description "Nginx + uWSGI + Flask based Debian Buster and managed by Supervisord"
+LABEL description "Secure Sharing: App to share sensitive information throught one-time links"
 
-# Configure locales (for Click python module)
-# ENV LC_ALL C.UTF-8
-# ENV LANG C.UTF-8
+ENV DEBIAN_FRONTEND noninteractive
 
-RUN apt-get update && apt-get install -y nginx \
-    python3 \
-    python3-dev \
-    python3-pip \
+RUN apt-get update && apt-get install -y apt-utils
+
+RUN apt-get update && apt-get install -y \
+     python3-dev
+
+# RUN apt-get install -y \
+#      python3-pip
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
     uwsgi \
-    supervisor \
-    uwsgi-plugin-python3 \
- && apt-get clean \
+    uwsgi-plugin-python \
+    uwsgi-plugin-python3
+
+
+RUN apt-get clean \
  && apt-get autoremove \
- && rm /etc/nginx/sites-enabled/default \
  && rm -rf /var/lib/apt/lists/*
-
-# Copy Nginx configs and enable API
-COPY ./docker/app.conf /etc/nginx/sites-available/app.conf
-RUN ln -s /etc/nginx/sites-available/app.conf /etc/nginx/sites-enabled
-
-# Supervisor configuration files
-COPY ./docker/supervisor.conf /etc/supervisor/conf.d/
 
 # Copy app
 COPY ./ /opt/app/
@@ -32,8 +29,9 @@ COPY ./ /opt/app/
 WORKDIR /opt/app
 
 # Install requirements
-RUN pip3 install -r requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --no-cache-dir uwsgi
 
-EXPOSE 80
+EXPOSE 8000
 
-CMD /usr/bin/supervisord -c /etc/supervisor/supervisord.conf
+CMD uwsgi --ini uwsgi.ini
