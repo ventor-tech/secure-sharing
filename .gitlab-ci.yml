@@ -1,0 +1,25 @@
+image: python:latest
+
+stages:
+  - lint
+  - test
+
+before_script:
+  - python -V
+  - pip install -r requirements.txt
+
+pylint:
+  stage: lint
+  script:
+    - pip install flake8
+    - flake8
+
+test:
+  stage: test
+  script:
+    - pip install pytest coverage
+    - coverage run -m pytest
+    - coverage report
+  coverage: '/^TOTAL\s+\d+\s+\d+\s+\d+\s+\d+\s+(\d+\%)$/'
+  artifacts:
+    expire_in: 5 day
