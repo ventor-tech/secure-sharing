@@ -13,7 +13,7 @@ let Home = {
         let view =  /*html*/`
             <section id="notification" class="section">
                 <div class="jumbotron alert alert-warning p-5">
-                    <h1 class="display-4">This message will be removed from our server!</h1>
+                    <h1 class="display-5 text-danger">This message will be removed from our server!</h1>
                     <p class="lead">
                         You will not be able to view this note again.
                         If you need access to this information again please copy it to a secure location.
@@ -29,7 +29,7 @@ let Home = {
                         Each note can be viewed only once. After that it will be destroyed from our servers.
                     </p>
                     
-                    <a href="/" class="btn btn-primary">Go to main page</a>
+                    <a href="/" class="btn btn-primary">Go to the main page</a>
                 </div>
             </section>
             <section id="success" class="section d-none">

@@ -1,4 +1,3 @@
-"""App routes"""
 from flask import Blueprint, render_template, redirect, url_for
 
 
@@ -19,5 +18,4 @@ def index():
 
 @app_routes.route('/<path:path>')
 def redirect_to_index(path=None):
-    print('redirect to root')
     return redirect(url_for('app_routes.index'))

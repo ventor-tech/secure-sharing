@@ -16,6 +16,7 @@ class Encryption(object):
         """
         if nbits <= 0:
             raise ValueError('nbits should be positive')
+
         # Function secrets.token_hex(nbytes) generates two hex symbols
         # for each byte from nbytes. We divide number of bytes by 2 to get
         # 32-bytes string required for AES-256.

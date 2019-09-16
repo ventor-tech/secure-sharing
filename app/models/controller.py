@@ -9,7 +9,7 @@ class EncryptionController(object):
     """
     TODO: Rename class and add description
     """
-    def encrypt(message):
+    def encrypt(message, ttl=86400):
         """
         This method takes message, encrypt and place encrypted message
         with parts of key (nonce, ciphertext, tag) into Redis.
@@ -18,6 +18,8 @@ class EncryptionController(object):
             raise ValueError('Message cannot be empty')
 
         key = Encryption.generate_key()
+        key_hash = hashlib.sha256(key).hexdigest()
+
         nonce, ciphertext, tag = Encryption.encrypt_text(
             key,
             message
@@ -25,13 +27,17 @@ class EncryptionController(object):
 
         # Save in Redis
         redis.hmset(
-            hashlib.sha256(key).hexdigest(),
+            key_hash,
             {
                 'nonce': nonce,
                 'ciphertext': ciphertext,
                 'tag': tag
             }
         )
+
+        # Configure expiration time
+        if ttl > 0:
+            redis.expire(key_hash, ttl)
 
         return key
 

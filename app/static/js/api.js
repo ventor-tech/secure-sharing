@@ -29,14 +29,15 @@ const API = {
         return resp['message'];
     },
 
-    encryptMessage: async function (message) {
+    encryptMessage: async function (message, ttl) {
         const options = {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                'message': message
+                'message': message,
+                'ttl': ttl
             })
         };
 

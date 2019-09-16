@@ -1,4 +1,3 @@
-"""API related to new interface"""
 from flask import Blueprint, current_app, jsonify, request
 
 from app.models.controller import EncryptionController
@@ -12,12 +11,13 @@ api_routes = Blueprint(
 @api_routes.route('/encrypt/', strict_slashes=False, methods=['POST'])
 def encrypt_message():
     message = request.json.get('message', '').strip()
+    ttl = request.json.get('ttl', 24*60*60)  # By default store 1 day
 
     if not message:
         return jsonify({'error': 'No message specified'}), 400
 
     try:
-        key = EncryptionController.encrypt(message)
+        key = EncryptionController.encrypt(message, ttl)
     except Exception as err:
         if current_app.config['DEBUG']:
             return jsonify({'error': str(err)}), 500
