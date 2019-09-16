@@ -1,9 +1,9 @@
 # Secure Sharing
 
-<a href="/docs/images/screenshots.png"><img src="docs/images/screenshots.png" width="1000"></a>
-
 [![pipeline status](https://git.xpansa.com/alexander.pashuk/secure-sharing/badges/master/pipeline.svg)](https://git.xpansa.com/alexander.pashuk/secure-sharing/commits/master)
 [![coverage report](https://git.xpansa.com/alexander.pashuk/secure-sharing/badges/master/coverage.svg)](https://git.xpansa.com/alexander.pashuk/secure-sharing/commits/master)
+
+<a href="/docs/images/screenshots.png"><img src="docs/images/screenshots.png"></a>
 
 "Secure Sharing" is a service to share sensitive information through one-time links.
 
