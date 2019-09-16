@@ -79,7 +79,7 @@ pip install uwsgi
 uwsgi --ini uwsgi.ini
 ```
 
-**NOTE** You need Redis server installed somewhere. One options is to run it
+**NOTE** You need Redis server installed somewhere. For example, run it
 locally in Docker:
 
 ```bash
