@@ -12,9 +12,10 @@ let About = {
                 <p>
                 We used the following technologies:
                 <ul>
-                    <li>Flask as web application framework</li>
-                    <li>Redis as a storage for messages</li>
-                    <li>Bootstrap 4 as a frond-end toolkit</li>
+                    <li><a href="https://palletsprojects.com/p/flask/">Flask</a> as web application framework
+                    <li><a href="https://pycryptodome.readthedocs.io/en/latest/index.html">PyCryptodome</a> as cryptographic framework
+                    <li><a href="https://redis.io/">Redis</a> as a storage for messages
+                    <li><a href="https://getbootstrap.com/">Bootstrap 4</a> as a frond-end toolkit
                 </ul>
                 </p>
                 <p>

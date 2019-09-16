@@ -6,9 +6,10 @@
 "Secure Sharing" is a service to share sensitive information through one-time links.
 
 App written with Python and JavaScript using the following tools:
-* Flask as web application framework.
-* Redis as a storage for messages.
-* Bootstrap 4 as a frond-end toolkit.
+* [Flask](https://palletsprojects.com/p/flask/) as web application framework
+* [PyCryptodome](https://pycryptodome.readthedocs.io/en/latest/index.html) as cryptographic framework
+* [Redis](https://redis.io/) as a storage for messages
+* [Bootstrap 4](https://getbootstrap.com/) as a frond-end toolkit
 
 You can test service [here](https://share.ventor.tech).
 
