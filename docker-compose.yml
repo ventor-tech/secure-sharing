@@ -4,7 +4,7 @@ services:
         container_name: secure_sharing
         build: .
         ports:
-            - 8000:8000
+            - 127.0.0.1:8000:8000
         restart: always
         depends_on:
             - redis
@@ -13,5 +13,5 @@ services:
         restart: always
         volumes:
             - ./redis-data:/data
-        ports:
-            - 6379:6379
+        expose:
+            - 6379
