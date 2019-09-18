@@ -1,6 +1,6 @@
 # Secure Sharing
 
-[![Build Status](https://travis-ci.com/ventor-tech/secure-sharing.svg?branch=master)](https://travis-ci.com/ventor-tech/secure-sharing)
+[![Build Status](https://travis-ci.com/ventor-tech/secure-sharing.svg?branch=experiments-with-travis-ci)](https://travis-ci.com/ventor-tech/secure-sharing)
 
 <a href="/docs/images/screenshots.png"><img src="docs/images/screenshots.png"></a>
 
