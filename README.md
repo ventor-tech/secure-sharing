@@ -33,6 +33,8 @@ with technical issues.
 
 ### Contributors
 
+* Oleg Kuryan
+
 ### Maintainers
 
 This module is maintained by the [VentorTech](https://ventor.tech).
