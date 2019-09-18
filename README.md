@@ -29,7 +29,7 @@ with technical issues.
 
 ### Authors
 
-* Alexander Pashuk (alexander@ventor.tech)
+* Alexander Pashuk
 
 ### Contributors
 
