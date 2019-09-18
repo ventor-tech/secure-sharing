@@ -1,6 +1,6 @@
 FROM python:3.7
 
-LABEL maintainer "Alexander Pashuk <alexander.pashuk@xpansa.com>"
+LABEL maintainer "Alexander Pashuk
 LABEL description "Secure Sharing: App to share sensitive information throught one-time links"
 
 ENV DEBIAN_FRONTEND noninteractive
