@@ -1,11 +1,16 @@
 sudo: false
+
 language: python
+
 python:
   - 3.7
+
 install:
   - pip install -r requirements.txt
-  - pip install pytest coverage
-before_script:
-  - coverage run -m pytest
+  - pip install pytest coverage codecov
 
-script: coverage report
+script:
+  - coverage run -m test
+
+after_success:
+  - codecov
