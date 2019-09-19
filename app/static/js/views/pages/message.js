@@ -73,7 +73,9 @@ let Home = {
         this.eles['copy'].addEventListener('click', this.copy.bind(this));
 
         // Copy message on click
-        this.eles['message'].addEventListener('click', this.copy.bind(this));
+        // Disabled for better user experience
+        // (to allow to copy parts of message directly from textarea)
+        // this.eles['message'].addEventListener('click', this.copy.bind(this));
     },
 
     showError: function () {
