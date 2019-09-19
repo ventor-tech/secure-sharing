@@ -1,7 +1,7 @@
 # Secure Sharing
 
-[![pipeline status](https://git.xpansa.com/alexander.pashuk/secure-sharing/badges/master/pipeline.svg)](https://git.xpansa.com/alexander.pashuk/secure-sharing/commits/master)
-[![coverage report](https://git.xpansa.com/alexander.pashuk/secure-sharing/badges/master/coverage.svg)](https://git.xpansa.com/alexander.pashuk/secure-sharing/commits/master)
+[![Build Status](https://travis-ci.com/ventor-tech/secure-sharing.svg?branch=master)](https://travis-ci.com/ventor-tech/secure-sharing)
+[![codecov](https://codecov.io/gh/ventor-tech/secure-sharing/branch/master/graph/badge.svg)](https://codecov.io/gh/ventor-tech/secure-sharing)
 
 <a href="/docs/images/screenshots.png"><img src="docs/images/screenshots.png"></a>
 
@@ -32,9 +32,11 @@ with technical issues.
 
 ### Authors
 
-* Alexander Pashuk (alexander@ventor.tech)
+* Alexander Pashuk
 
 ### Contributors
+
+* Oleg Kuryan
 
 ### Maintainers
 
